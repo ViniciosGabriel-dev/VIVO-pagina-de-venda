@@ -46,7 +46,7 @@
         left: 0;
         right: 0;
         z-index: 100;
-        padding: 10px 40px;
+        padding: 6px 40px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -1635,54 +1635,28 @@
               <select id="planSelect">
                 <option value="">Selecione um produto</option>
                 <optgroup label="── Fibra ──">
-                  <option value="300 Mega — Residencial">
-                    300 Mega — R$89/mês
-                  </option>
-                  <option value="500 Mega — Residencial">
-                    500 Mega — R$119/mês
-                  </option>
-                  <option value="1 Giga — Residencial">
-                    1 Giga — R$169/mês
-                  </option>
+                  <option value="300 Mega — Residencial">Fibra 300 Mega</option>
+                  <option value="500 Mega — Residencial">Fibra 500 Mega</option>
+                  <option value="1 Giga — Residencial">Fibra 1 Giga</option>
                 </optgroup>
                 <optgroup label="── Combo ──">
-                  <option value="Combo Total Essencial">
-                    Total Essencial — R$130/mês
-                  </option>
-                  <option value="Combo Total Pro">Total Pro — R$160/mês</option>
-                  <option value="Combo Total Ultra">
-                    Total Ultra — R$190/mês
-                  </option>
+                  <option value="Combo Essencial">Combo Essencial</option>
+                  <option value="Combo Pro">Combo Pro</option>
+                  <option value="Combo Ultra">Combo Ultra</option>
                 </optgroup>
-                <optgroup label="── Móvel ──">
-                  <option value="Controle">Controle</option>
-                  <option value="Easy Lite">Easy Lite</option>
-                  <option value="Easy Lite 21">
-                    Easy Lite 21 (com celular)
-                  </option>
+                <optgroup label="── Celular ──">
+                  <option value="Plano Básico">Plano Básico</option>
+                  <option value="Plano Light">Plano Light</option>
+                  <option value="Plano Light + Aparelho">Plano Light + Aparelho</option>
                 </optgroup>
                 <optgroup label="── Empresas (CNPJ) ──">
-                  <option value="Empresas 6GB">
-                    6GB + Ilimitado — R$39,99/mês
-                  </option>
-                  <option value="Empresas 15GB">
-                    15GB + Ilimitado — R$54,99/mês
-                  </option>
-                  <option value="Empresas 20GB">
-                    20GB + Ilimitado — R$59,99/mês
-                  </option>
-                  <option value="Empresas 30GB">
-                    30GB + Ilimitado — R$69,99/mês
-                  </option>
-                  <option value="Empresas 40GB">
-                    40GB + Ilimitado — R$79,99/mês
-                  </option>
-                  <option value="Empresas 50GB">
-                    50GB + Ilimitado — R$89,99/mês
-                  </option>
-                  <option value="Empresas 100GB">
-                    100GB + Ilimitado — R$99,99/mês
-                  </option>
+                  <option value="Empresas 6GB">Empresas Starter — 6GB</option>
+                  <option value="Empresas 15GB">Empresas Lite — 15GB</option>
+                  <option value="Empresas 20GB">Empresas Plus — 20GB</option>
+                  <option value="Empresas 30GB">Empresas Pro — 30GB</option>
+                  <option value="Empresas 40GB">Empresas Max — 40GB</option>
+                  <option value="Empresas 50GB">Empresas Ultra — 50GB</option>
+                  <option value="Empresas 100GB">Empresas Premium — 100GB</option>
                 </optgroup>
                 <optgroup label="── Serviços Extras ──">
                   <option value="Automonitoramento">
@@ -1752,7 +1726,7 @@
                 </svg>
               </div>
               <span class="tag">Mais Barato</span>
-              <h4>Controle</h4>
+              <h4>Plano Básico</h4>
               <p>
                 Acesso ilimitado às suas redes sociais favoritas sem consumir
                 dados. Ideal para quem quer pagar menos e ficar sempre
@@ -1764,7 +1738,7 @@
                 <li>Ligações incluídas</li>
                 <li>Sem surpresas na fatura</li>
               </ul>
-              <button class="btn-servico" onclick="scrollToForm('Controle')">
+              <button class="btn-servico" onclick="scrollToForm('Plano Básico')">
                 Quero este plano →
               </button>
             </div>
@@ -1782,7 +1756,7 @@
                 </svg>
               </div>
               <span class="tag">Economia Total</span>
-              <h4>Easy Lite</h4>
+              <h4>Plano Light</h4>
               <p>
                 Internet para o seu celular com muito mais economia. A opção
                 mais inteligente para usar sem gastar muito.
@@ -1793,7 +1767,7 @@
                 <li>Portabilidade fácil e rápida</li>
                 <li>Sem fidelidade mensal</li>
               </ul>
-              <button class="btn-servico" onclick="scrollToForm('Easy Lite')">
+              <button class="btn-servico" onclick="scrollToForm('Plano Light')">
                 Quero este plano →
               </button>
             </div>
@@ -1813,7 +1787,7 @@
                 </svg>
               </div>
               <span class="tag">Celular Incluso</span>
-              <h4>Easy Lite 21</h4>
+              <h4>Plano Light + Aparelho</h4>
               <p>
                 O plano de celular com smartphone incluso. Pague o plano e já
                 ganhe um aparelho para usar — sem entrada.
@@ -1826,7 +1800,7 @@
               </ul>
               <button
                 class="btn-servico"
-                onclick="scrollToForm('Easy Lite 21')"
+                onclick="scrollToForm('Plano Light + Aparelho')"
               >
                 Quero este plano →
               </button>
@@ -1869,9 +1843,8 @@
           </div>
           <div class="servico-cards">
             <div class="servico-card reveal">
-              <span class="tag">Total Essencial</span>
-              <h4>Fibra + 300MB Celular</h4>
-              <div class="preco">R$ 130<small>/mês</small></div>
+              <span class="tag">Combo Essencial</span>
+              <h4>Fibra + Celular Básico</h4>
               <ul>
                 <li>Fibra óptica residencial</li>
                 <li>300MB para o celular</li>
@@ -1881,7 +1854,7 @@
               </ul>
               <button
                 class="btn-servico"
-                onclick="scrollToForm('Combo Total Essencial')"
+                onclick="scrollToForm('Combo Essencial')"
               >
                 Contratar →
               </button>
@@ -1889,9 +1862,8 @@
 
             <div class="servico-card destaque reveal">
               <div class="popular-badge">⭐ Mais popular</div>
-              <span class="tag">Total Pro</span>
-              <h4>Fibra + 500MB Celular</h4>
-              <div class="preco">R$ 160<small>/mês</small></div>
+              <span class="tag">Combo Pro</span>
+              <h4>Fibra + Celular Pro</h4>
               <ul>
                 <li>Fibra óptica residencial</li>
                 <li>500MB para o celular</li>
@@ -1901,16 +1873,15 @@
               </ul>
               <button
                 class="btn-servico"
-                onclick="scrollToForm('Combo Total Pro')"
+                onclick="scrollToForm('Combo Pro')"
               >
                 Contratar →
               </button>
             </div>
 
             <div class="servico-card reveal">
-              <span class="tag">Total Ultra</span>
-              <h4>Fibra + 700MB Celular</h4>
-              <div class="preco">R$ 190<small>/mês</small></div>
+              <span class="tag">Combo Ultra</span>
+              <h4>Fibra + Celular Ultra</h4>
               <ul>
                 <li>Fibra óptica residencial</li>
                 <li>700MB para o celular</li>
@@ -1920,7 +1891,7 @@
               </ul>
               <button
                 class="btn-servico"
-                onclick="scrollToForm('Combo Total Ultra')"
+                onclick="scrollToForm('Combo Ultra')"
               >
                 Contratar →
               </button>
@@ -1962,7 +1933,7 @@
               <div class="servico-card">
                 <div class="plan-speed">6<span>GB</span></div>
                 <div class="plan-name">Empresas Starter</div>
-                <div class="plan-price">R$ 39<small>,99/mês</small></div>
+
                 <ul class="plan-features">
                   <li>Ligações ilimitadas</li>
                   <li>Cobertura nacional</li>
@@ -1975,7 +1946,7 @@
               <div class="servico-card">
                 <div class="plan-speed">15<span>GB</span></div>
                 <div class="plan-name">Empresas Lite</div>
-                <div class="plan-price">R$ 54<small>,99/mês</small></div>
+
                 <ul class="plan-features">
                   <li>Ligações ilimitadas</li>
                   <li>Cobertura nacional</li>
@@ -1991,7 +1962,7 @@
               <div class="servico-card">
                 <div class="plan-speed">20<span>GB</span></div>
                 <div class="plan-name">Empresas Plus</div>
-                <div class="plan-price">R$ 59<small>,99/mês</small></div>
+
                 <ul class="plan-features">
                   <li>Ligações ilimitadas</li>
                   <li>Cobertura nacional</li>
@@ -2014,7 +1985,7 @@
                 <div class="popular-badge">⭐ Mais pedido</div>
                 <div class="plan-speed">30<span>GB</span></div>
                 <div class="plan-name">Empresas Pro</div>
-                <div class="plan-price">R$ 69<small>,99/mês</small></div>
+
                 <ul class="plan-features">
                   <li>Ligações ilimitadas</li>
                   <li>Cobertura nacional</li>
@@ -2038,7 +2009,7 @@
               <div class="servico-card">
                 <div class="plan-speed">40<span>GB</span></div>
                 <div class="plan-name">Empresas Max</div>
-                <div class="plan-price">R$ 79<small>,99/mês</small></div>
+
                 <ul class="plan-features">
                   <li>Ligações ilimitadas</li>
                   <li>Cobertura nacional</li>
@@ -2054,7 +2025,7 @@
               <div class="servico-card">
                 <div class="plan-speed">50<span>GB</span></div>
                 <div class="plan-name">Empresas Ultra</div>
-                <div class="plan-price">R$ 89<small>,99/mês</small></div>
+
                 <ul class="plan-features">
                   <li>Ligações ilimitadas</li>
                   <li>Cobertura nacional</li>
@@ -2070,7 +2041,7 @@
               <div class="servico-card">
                 <div class="plan-speed">100<span>GB</span></div>
                 <div class="plan-name">Empresas Premium</div>
-                <div class="plan-price">R$ 99<small>,99/mês</small></div>
+
                 <ul class="plan-features">
                   <li>Ligações ilimitadas</li>
                   <li>Cobertura nacional</li>
@@ -2271,9 +2242,7 @@
               <li>Função Babá Eletrônica</li>
               <li>Suporte remoto incluso</li>
             </ul>
-            <div class="preco" style="font-size: 1.3rem">
-              A partir de R$ 19,90<small>/mês</small>
-            </div>
+
             <button
               class="btn-servico"
               onclick="scrollToForm('Automonitoramento')"
@@ -2294,8 +2263,7 @@
       <div class="plans-grid">
         <div class="plan-card">
           <div class="plan-speed">300<span>Mega</span></div>
-          <div class="plan-name">Fibra Óptica Residencial</div>
-          <div class="plan-price">R$ 89<small>/mês</small></div>
+          <div class="plan-name">Fibra Residencial</div>
           <ul class="plan-features">
             <li>Wi-Fi incluso</li>
             <li>Instalação gratuita</li>
@@ -2313,8 +2281,7 @@
         <div class="plan-card popular">
           <div class="popular-badge">⭐ Mais popular</div>
           <div class="plan-speed">500<span>Mega</span></div>
-          <div class="plan-name">Fibra Óptica Residencial</div>
-          <div class="plan-price">R$ 119<small>/mês</small></div>
+          <div class="plan-name">Fibra Residencial</div>
           <ul class="plan-features">
             <li>Wi-Fi incluso</li>
             <li>Instalação gratuita</li>
@@ -2332,8 +2299,7 @@
 
         <div class="plan-card">
           <div class="plan-speed">1<span>Giga</span></div>
-          <div class="plan-name">Fibra Óptica Premium</div>
-          <div class="plan-price">R$ 169<small>/mês</small></div>
+          <div class="plan-name">Fibra Premium</div>
           <ul class="plan-features">
             <li>Wi-Fi 6 incluso</li>
             <li>Instalação gratuita</li>
@@ -2364,7 +2330,6 @@
             </svg>
           </div>
           <div class="plan-name">Plano Empresarial</div>
-          <div class="plan-price">Sob<small> consulta</small></div>
           <ul class="plan-features">
             <li>IP fixo incluso</li>
             <li>SLA garantido</li>
