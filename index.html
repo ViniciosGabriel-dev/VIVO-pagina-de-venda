@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alisson Henrique | Consultor Fibra</title>
+    <link rel="icon" type="image/png" href="favcon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -1647,7 +1648,9 @@
                 <optgroup label="── Celular ──">
                   <option value="Plano Básico">Plano Básico</option>
                   <option value="Plano Light">Plano Light</option>
-                  <option value="Plano Light + Aparelho">Plano Light + Aparelho</option>
+                  <option value="Plano Light + Aparelho">
+                    Plano Light + Aparelho
+                  </option>
                 </optgroup>
                 <optgroup label="── Empresas (CNPJ) ──">
                   <option value="Empresas 6GB">Empresas Starter — 6GB</option>
@@ -1656,7 +1659,9 @@
                   <option value="Empresas 30GB">Empresas Pro — 30GB</option>
                   <option value="Empresas 40GB">Empresas Max — 40GB</option>
                   <option value="Empresas 50GB">Empresas Ultra — 50GB</option>
-                  <option value="Empresas 100GB">Empresas Premium — 100GB</option>
+                  <option value="Empresas 100GB">
+                    Empresas Premium — 100GB
+                  </option>
                 </optgroup>
                 <optgroup label="── Serviços Extras ──">
                   <option value="Automonitoramento">
@@ -1738,7 +1743,10 @@
                 <li>Ligações incluídas</li>
                 <li>Sem surpresas na fatura</li>
               </ul>
-              <button class="btn-servico" onclick="scrollToForm('Plano Básico')">
+              <button
+                class="btn-servico"
+                onclick="scrollToForm('Plano Básico')"
+              >
                 Quero este plano →
               </button>
             </div>
@@ -1871,10 +1879,7 @@
                 <li>Apps inclusos</li>
                 <li>Amazon Prime 6 meses</li>
               </ul>
-              <button
-                class="btn-servico"
-                onclick="scrollToForm('Combo Pro')"
-              >
+              <button class="btn-servico" onclick="scrollToForm('Combo Pro')">
                 Contratar →
               </button>
             </div>
@@ -1889,10 +1894,7 @@
                 <li>Apps inclusos</li>
                 <li>Amazon Prime 6 meses</li>
               </ul>
-              <button
-                class="btn-servico"
-                onclick="scrollToForm('Combo Ultra')"
-              >
+              <button class="btn-servico" onclick="scrollToForm('Combo Ultra')">
                 Contratar →
               </button>
             </div>
@@ -2336,7 +2338,7 @@
             <li>Suporte dedicado</li>
             <li>Velocidade personalizada</li>
           </ul>
-          <button class="btn-plan" onclick="scrollToForm('Plano Empresarial')">
+          <button class="btn-plan" onclick="scrollToForm('Quero ver todas as opções')">
             Consultar
           </button>
         </div>
@@ -2515,7 +2517,7 @@
         <a href="https://instagram.com/alisson_consultor_vivo" target="_blank"
           >@alisson_consultor_vivo</a
         >
-        &nbsp;·&nbsp; <a href="#">Política de Privacidade</a>
+        &nbsp;·&nbsp; <a href="privacidade.html">Política de Privacidade</a>
       </p>
     </footer>
 
@@ -2555,8 +2557,75 @@
 
       function handleSubmit(e) {
         e.preventDefault();
-        const btn = e.target.querySelector(".btn-cta");
-        btn.textContent = "✅ Enviado! Em breve entraremos em contato.";
+        const form = e.target;
+        const nome = form.querySelector('input[type="text"]').value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const email = form.querySelector('input[type="email"]').value.trim();
+        const cep = document.getElementById("cep").value.trim();
+        const plano = document.getElementById("planSelect").value;
+
+        const mensagensPorPlano = {
+          "300 Mega — Residencial":
+            "Tenho interesse no *Plano Fibra 300 Mega Residencial*. Gostaria de saber mais sobre disponibilidade e contratação.",
+          "500 Mega — Residencial":
+            "Tenho interesse no *Plano Fibra 500 Mega Residencial* (com Disney+ incluso). Gostaria de saber mais sobre disponibilidade e contratação.",
+          "1 Giga — Residencial":
+            "Tenho interesse no *Plano Fibra 1 Giga Residencial Premium* (com Wi-Fi 6, Disney+ e Globoplay). Gostaria de saber mais sobre disponibilidade e contratação.",
+          "Combo Essencial":
+            "Tenho interesse no *Combo Essencial — Fibra + Celular Básico* (300MB fibra + 20GB móvel + Amazon Prime). Gostaria de saber mais.",
+          "Combo Pro":
+            "Tenho interesse no *Combo Pro — Fibra + Celular Pro* (500MB fibra + 50GB móvel + Amazon Prime). Gostaria de saber mais.",
+          "Combo Ultra":
+            "Tenho interesse no *Combo Ultra — Fibra + Celular Ultra* (700MB fibra + 70GB móvel + Amazon Prime). Gostaria de saber mais.",
+          "Plano Básico":
+            "Tenho interesse no *Plano de Celular Básico* (redes sociais ilimitadas + WhatsApp incluso). Gostaria de saber mais.",
+          "Plano Light":
+            "Tenho interesse no *Plano de Celular Light* (apps ilimitados + plano anual com desconto). Gostaria de saber mais.",
+          "Plano Light + Aparelho":
+            "Tenho interesse no *Plano Light + Aparelho* (smartphone incluso, sem entrada). Gostaria de saber mais.",
+          "Empresas 6GB":
+            "Tenho interesse no *Plano Empresarial Starter — 6GB* (ligações ilimitadas, para CNPJ). Gostaria de saber mais.",
+          "Empresas 15GB":
+            "Tenho interesse no *Plano Empresarial Lite — 15GB* (ligações ilimitadas, para CNPJ). Gostaria de saber mais.",
+          "Empresas 20GB":
+            "Tenho interesse no *Plano Empresarial Plus — 20GB* (ligações ilimitadas, para CNPJ). Gostaria de saber mais.",
+          "Empresas 30GB":
+            "Tenho interesse no *Plano Empresarial Pro — 30GB* (ligações ilimitadas + suporte prioritário, para CNPJ). Gostaria de saber mais.",
+          "Empresas 40GB":
+            "Tenho interesse no *Plano Empresarial Max — 40GB* (ligações ilimitadas + suporte prioritário, para CNPJ). Gostaria de saber mais.",
+          "Empresas 50GB":
+            "Tenho interesse no *Plano Empresarial Ultra — 50GB* (ligações ilimitadas + suporte dedicado, para CNPJ). Gostaria de saber mais.",
+          "Empresas 100GB":
+            "Tenho interesse no *Plano Empresarial Premium — 100GB* (ligações ilimitadas + suporte dedicado, para CNPJ). Gostaria de saber mais.",
+          "Automonitoramento":
+            "Tenho interesse no *Serviço de Automonitoramento* (câmera Full HD Wi-Fi, imagem em tempo real, áudio bidirecional). Gostaria de saber mais.",
+          "Streaming na Fatura":
+            "Tenho interesse em adicionar *Streaming na Fatura* (Disney+, Netflix, Globoplay e outros na mesma conta). Gostaria de saber mais.",
+          "TV Digital":
+            "Tenho interesse no *Serviço de TV Digital* (canais ao vivo, filmes e séries exclusivos no app). Gostaria de saber mais.",
+          "Seguro Celular":
+            "Tenho interesse no *Seguro Celular* (proteção contra roubo, furto e quebra acidental). Gostaria de saber mais.",
+          "Quero ver todas as opções":
+            "Gostaria de conhecer *todas as opções de planos disponíveis* na minha região. Pode me ajudar?",
+        };
+
+        const intencao =
+          mensagensPorPlano[plano] ||
+          "Gostaria de saber mais sobre os planos disponíveis.";
+
+        let msg = `Olá, Alisson! 👋\n\n`;
+        msg += `*Nome:* ${nome}\n`;
+        msg += `*WhatsApp:* ${phone}\n`;
+        if (email) msg += `*E-mail:* ${email}\n`;
+        if (cep) msg += `*CEP:* ${cep}\n`;
+        if (plano) msg += `*Plano de interesse:* ${plano}\n`;
+        msg += `\n${intencao}`;
+
+        const url = `https://wa.me/5511922396757?text=${encodeURIComponent(msg)}`;
+        window.open(url, "_blank");
+
+        const btn = form.querySelector(".btn-cta");
+        btn.textContent = "✅ Redirecionando para o WhatsApp...";
         btn.style.background = "linear-gradient(135deg, #1a8a4a, #22c55e)";
         btn.disabled = true;
       }

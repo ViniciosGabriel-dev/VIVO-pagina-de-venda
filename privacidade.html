@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Privacidade | Alisson Henrique Consultor</title>
+    <link rel="icon" type="image/png" href="favcon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --purple: #660099;
+        --purple-light: #9900cc;
+        --pink: #ff00aa;
+        --white: #ffffff;
+      }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #0d0014;
+        color: var(--white);
+        min-height: 100vh;
+      }
+
+      /* HEADER */
+      header {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 6px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .logo img {
+        height: 80px;
+        width: auto;
+        display: block;
+      }
+
+      .back-link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.2s;
+      }
+      .back-link:hover { color: var(--pink); }
+
+      /* HERO BANNER */
+      .page-banner {
+        padding: 140px 40px 60px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .page-banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(102, 0, 153, 0.3) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .page-banner::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent 5%, var(--purple-light) 25%, var(--pink) 50%, var(--purple-light) 75%, transparent 95%);
+      }
+
+      .page-banner h1 {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 900;
+        margin-bottom: 12px;
+        position: relative;
+      }
+      .page-banner p {
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 0.9rem;
+        position: relative;
+      }
+
+      /* CONTENT */
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 40px 80px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 16px;
+        padding: 32px;
+      }
+
+      .section h2 {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--pink);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .section h2 .num {
+        background: rgba(255, 0, 170, 0.15);
+        border: 1px solid rgba(255, 0, 170, 0.3);
+        color: var(--pink);
+        font-size: 0.75rem;
+        font-weight: 700;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .section p {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.75;
+        margin-bottom: 12px;
+      }
+      .section p:last-child { margin-bottom: 0; }
+
+      .section ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .section ul li {
+        font-size: 0.92rem;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.6;
+        padding-left: 20px;
+        position: relative;
+      }
+      .section ul li::before {
+        content: "✓";
+        color: var(--pink);
+        font-weight: 700;
+        position: absolute;
+        left: 0;
+      }
+
+      .highlight {
+        background: rgba(255, 0, 170, 0.08);
+        border: 1px solid rgba(255, 0, 170, 0.2);
+        border-radius: 10px;
+        padding: 16px 20px;
+        font-size: 0.9rem;
+        color: rgba(255, 220, 200, 0.9);
+        line-height: 1.6;
+        margin-top: 16px;
+      }
+
+      /* FOOTER */
+      footer {
+        padding: 40px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.8rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      footer a { color: rgba(255, 255, 255, 0.5); }
+
+      @media (max-width: 600px) {
+        header { padding: 6px 20px; }
+        .logo img { height: 60px; }
+        .page-banner { padding: 120px 20px 48px; }
+        .content { padding: 0 16px 60px; }
+        .section { padding: 22px 18px; }
+        footer { padding: 32px 16px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <div class="logo"><img src="logo.png" alt="Logo" /></div>
+      <a href="index.html" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+        Voltar ao site
+      </a>
+    </header>
+
+    <div class="page-banner">
+      <h1>Política de Privacidade</h1>
+      <p>Última atualização: abril de 2026</p>
+    </div>
+
+    <div class="content">
+
+      <div class="section">
+        <h2><span class="num">1</span> Quem somos</h2>
+        <p>
+          Esta página é operada por <strong>Alisson Henrique</strong>, consultor
+          independente credenciado para comercialização de produtos e serviços de
+          telecomunicações. O atendimento é realizado de forma personalizada via
+          WhatsApp e redes sociais.
+        </p>
+        <p>
+          Contato: <strong>@alisson_consultor_vivo</strong> no Instagram ou pelo
+          WhatsApp <strong>(11) 92239-6757</strong>.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">2</span> Quais dados coletamos</h2>
+        <p>Coletamos apenas os dados que você fornece voluntariamente no formulário de contato deste site:</p>
+        <ul>
+          <li>Nome completo</li>
+          <li>Número de WhatsApp</li>
+          <li>Endereço de e-mail (opcional)</li>
+          <li>CEP (para verificar cobertura)</li>
+          <li>Plano ou serviço de interesse</li>
+        </ul>
+        <div class="highlight">
+          Nenhum dado é coletado de forma automática ou oculta. Não utilizamos cookies de rastreamento nem pixels de terceiros.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">3</span> Como usamos seus dados</h2>
+        <p>As informações fornecidas são utilizadas exclusivamente para:</p>
+        <ul>
+          <li>Entrar em contato com você via WhatsApp para apresentar os planos</li>
+          <li>Verificar a disponibilidade do serviço no seu CEP</li>
+          <li>Personalizar o atendimento conforme o produto de interesse</li>
+          <li>Esclarecer dúvidas e auxiliar na contratação</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">4</span> Compartilhamento de dados</h2>
+        <p>
+          Seus dados <strong>não são vendidos, alugados ou compartilhados</strong> com
+          terceiros para fins comerciais.
+        </p>
+        <p>
+          As informações preenchidas no formulário são enviadas diretamente para o
+          WhatsApp do consultor via link <strong>wa.me</strong> — o envio ocorre
+          no seu próprio dispositivo, sem armazenamento em servidores externos.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">5</span> Armazenamento e segurança</h2>
+        <p>
+          Este site não possui banco de dados próprio. Nenhum dado é armazenado em
+          servidor. A troca de informações ocorre integralmente dentro do aplicativo
+          WhatsApp, que possui sua própria política de privacidade e criptografia
+          de ponta a ponta.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">6</span> Seus direitos (LGPD)</h2>
+        <p>
+          Em conformidade com a <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</strong>,
+          você tem direito a:
+        </p>
+        <ul>
+          <li>Confirmar se seus dados estão sendo tratados</li>
+          <li>Solicitar a correção de dados incompletos ou desatualizados</li>
+          <li>Solicitar a exclusão dos seus dados a qualquer momento</li>
+          <li>Revogar o consentimento para uso dos seus dados</li>
+          <li>Ser informado sobre com quem seus dados são compartilhados</li>
+        </ul>
+        <p style="margin-top: 14px;">
+          Para exercer qualquer um desses direitos, entre em contato pelo WhatsApp
+          <strong>(11) 92239-6757</strong>.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">7</span> Alterações nesta política</h2>
+        <p>
+          Esta política pode ser atualizada periodicamente. A data da última
+          revisão estará sempre indicada no topo desta página. O uso continuado
+          do site após qualquer alteração implica concordância com os termos
+          atualizados.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">8</span> Contato</h2>
+        <p>
+          Dúvidas, solicitações ou reclamações relacionadas à privacidade podem
+          ser enviadas diretamente para:
+        </p>
+        <ul>
+          <li>WhatsApp: (11) 92239-6757</li>
+          <li>Instagram: @alisson_consultor_vivo</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <footer>
+      <p>© 2026 Alisson Henrique · Consultor Pleno · Todos os direitos reservados</p>
+      <p style="margin-top: 6px;">
+        <a href="index.html">← Voltar ao site</a>
+        &nbsp;·&nbsp;
+        <a href="https://instagram.com/alisson_consultor_vivo" target="_blank">Instagram</a>
+      </p>
+    </footer>
+
+  </body>
+</html>
